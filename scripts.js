@@ -54,6 +54,17 @@ document.getElementById('expense-form').addEventListener('submit', function (e) 
 });
 
 // Pārējās funkcijas paliek nemainīgas
+document.getElementById('income-list').addEventListener('click', function (e) {
+    if (e.target.tagName === 'LI') {
+        const amount = parseFloat(e.target.querySelector('span').textContent.replace('€', ''));
+        const totalIncome = parseFloat(document.getElementById('total-income').textContent);
+
+        document.getElementById('total-income').textContent = (totalIncome - amount).toFixed(2);
+        e.target.remove();
+        updateBudget();
+    }
+});
+
 
 
 document.getElementById('expense-list').addEventListener('click', function (e) {
@@ -70,37 +81,59 @@ document.getElementById('expense-list').addEventListener('click', function (e) {
 function updateBudget() {
     const totalIncome = parseFloat(document.getElementById('total-income').textContent);
     const totalExpense = parseFloat(document.getElementById('total-expense').textContent);
-    const budgetRemaining = totalIncome - totalExpense;
 
-    document.getElementById('budget-remaining').textContent = budgetRemaining.toFixed(2);
+    let expenseRatio = 0;
+    let remainingRatio = 0;
+
+    if (totalIncome !== 0) {
+        expenseRatio = (totalExpense / totalIncome) * 100;
+        remainingRatio = 100;
+    }
 
     const expenseProgress = document.getElementById('expense-progress');
     const remainingProgress = document.getElementById('remaining-progress');
 
-    const expenseRatio = totalExpense / totalIncome * 100;
-    const remainingRatio = budgetRemaining / totalIncome * 100;
-
-    // Pievienot animētu procentu attēlojumu
     animatePercentage(expenseProgress, expenseRatio);
     animatePercentage(remainingProgress, remainingRatio);
 }
 
+
+
 // Funkcija, kas animē procentu attēlojumu
 function animatePercentage(element, ratio) {
-    let start = 0;
+    const start = parseFloat(element.style.width) || 0;
     const end = ratio;
-    const duration = 1000; // Laiks milisekundēs
-    const step = Math.abs(end - start) / duration;
 
-    const animation = setInterval(() => {
-        if (start >= end) {
-            clearInterval(animation);
+    const duration = 1000;
+    const range = end - start;
+    let progress = start;
+    let startTimestamp = null;
+
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
+        progress = start + (range * elapsed) / duration;
+        element.style.width = `${progress}%`;
+        element.textContent = `${element.id === 'expense-progress' ? 'Izdevumi' : 'Atlikušie ienākumi'}: ${Math.min(progress, end).toFixed(2)}%`;
+
+        if (elapsed < duration) {
+            window.requestAnimationFrame(step);
+        } else {
+            element.style.width = `${end}%`;
+            element.textContent = `${element.id === 'expense-progress' ? 'Izdevumi' : 'Atlikušie ienākumi'}: ${end.toFixed(2)}%`;
         }
-        start += step;
-        element.style.width = start + '%';
-        element.textContent = `${element.id === 'expense-progress' ? 'Izdevumi' : 'Atlikušie ienākumi'}: ${start.toFixed(2)}%`;
-    }, 10);
+    };
+
+    window.requestAnimationFrame(step);
 }
+
+
+
+
+
+
+
+
 
 // Pēc tam izsaucam updateBudget() funkciju jebkurā vietā, kur tiek atjaunoti ienākumi vai izdevumi
 

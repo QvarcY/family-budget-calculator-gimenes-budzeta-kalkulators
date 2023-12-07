@@ -45,7 +45,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="income-amount">Summa €</label>
-                        <input type="number" class="form-control" id="income-amount" required>
+                        <input type="text" class="form-control" id="income-amount" required pattern="^\d+(\.\d{1,2})?$">
                     </div>
                     <button type="submit" class="btn btn-primary">Pievienot ienākumu</button>
                 </form>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="expense-amount">Summa €</label>
-                        <input type="number" class="form-control" id="expense-amount" required>
+                        <input type="text" class="form-control" id="expense-amount" required pattern="^\d+(\.\d{1,2})?$">
                     </div>
                     <button type="submit" class="btn btn-danger">Pievienot izdevumu</button>
                 </form>
