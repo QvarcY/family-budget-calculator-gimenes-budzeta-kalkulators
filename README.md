@@ -3,7 +3,7 @@
 
 **ENG** - A family budget calculator web app using HTML, CSS, and JavaScript. Track income and expenses, get real-time updates on totals, and manage remaining budget.  
 **LV** - Ģimenes budžeta kalkulators ar HTML, CSS un JavaScript. Seko ienākumiem, izdevumiem, saņem reāllaika atjauninājumus par kopējiem rēķiniem un pārvaldi atlikušo budžetu.
-
+**Live DEMO:** https://kas.id.lv/noderigi/calc/familycalc.html
 **English**
 *Description:*
 A simple family budget calculator web application built with HTML, CSS, and JavaScript. Allows users to track their income and expenses by adding entries and provides real-time updates on total income, total expenses, and the remaining budget.
