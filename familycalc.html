@@ -40,11 +40,11 @@
                 <h3>Ienākumi</h3>
                 <form id="income-form">
                     <div class="mb-3">
-                        <label for="income-source">Ienākumu avots</label>
-                        <input type="text" class="form-control" id="income-source" required>
+                        <label for="income-source">Ienākuma nosaukums</label>
+                        <input type="text" class="form-control" id="income-source" required pattern="[A-Za-z\s]+" title="Ievadiet tekstu">
                     </div>
                     <div class="mb-3">
-                        <label for="income-amount">Summa</label>
+                        <label for="income-amount">Summa €</label>
                         <input type="number" class="form-control" id="income-amount" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Pievienot ienākumu</button>
@@ -58,11 +58,11 @@
                 <h3>Izdevumi</h3>
                 <form id="expense-form">
                     <div class="mb-3">
-                        <label for="expense-source">Izdevumu veids</label>
-                        <input type="text" class="form-control" id="expense-source" required>
+                        <label for="expense-source">Izdevuma nosaukums</label>
+                        <input type="text" class="form-control" id="expense-source" required pattern="[A-Za-z\s]+" title="Ievadiet tekstu">
                     </div>
                     <div class="mb-3">
-                        <label for="expense-amount">Summa</label>
+                        <label for="expense-amount">Summa €</label>
                         <input type="number" class="form-control" id="expense-amount" required>
                     </div>
                     <button type="submit" class="btn btn-danger">Pievienot izdevumu</button>

@@ -50,3 +50,17 @@ form {
         transform: translateY(0);
     }
 }
+
+/* Pielāgot platāku progress bar */
+.progress-bar {
+    border-radius: 20px; /* Noapaļoti stūri */
+    background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(206, 199, 199, 0.1) 50%, rgba(0,0,0,0.1) 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ēnojums */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    width: 100%; /* Maini šo vērtību, lai palielinātu vai samazinātu platumu */
+    max-width: 100%; /* Noteiktu maksimālo platību, lai tas nepārsniegtu noteikto robežu */
+    transition: width 0.5s ease-in-out; /* Animācija progress izmaiņām */
+}
+
+
