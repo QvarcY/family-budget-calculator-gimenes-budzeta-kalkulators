@@ -72,6 +72,23 @@
                 </ul>
             </div>
 
+<!-- Izdevumi/ienākumi procentu attiecība -->
+<div class="container mt-5">
+    <h1>Ģimenes budžeta kalkulators</h1>
+
+    <!-- Pievienots progress bar -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Ienākumi un Izdevumi Attiecībā</h3>
+            <div class="progress">
+                <div id="expense-progress" class="progress-bar bg-danger" role="progressbar"
+                    style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Izdevumi: 0%</div>
+                <div id="remaining-progress" class="progress-bar bg-info" role="progressbar"
+                    style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Atlikušie ienākumi: 0%</div>
+            </div>
+        </div>
+    </div>
+
             <div class="col-md-12 mt-4">
                 <h3>Kopējie rezultāti</h3>
                 <p>Kopējie ienākumi: <span id="total-income">0</span></p>

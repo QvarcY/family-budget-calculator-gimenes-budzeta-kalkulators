@@ -58,4 +58,19 @@ function updateBudget() {
     const budgetRemaining = totalIncome - totalExpense;
 
     document.getElementById('budget-remaining').textContent = budgetRemaining.toFixed(2);
+
+    const expenseProgress = document.getElementById('expense-progress');
+    const remainingProgress = document.getElementById('remaining-progress');
+
+    const expenseRatio = totalExpense / totalIncome * 100;
+    const remainingRatio = budgetRemaining / totalIncome * 100;
+
+    expenseProgress.style.width = expenseRatio + '%';
+    expenseProgress.textContent = 'Izdevumi: ' + expenseRatio.toFixed(2) + '%';
+
+    remainingProgress.style.width = remainingRatio + '%';
+    remainingProgress.textContent = 'Atlikušie ienākumi: ' + remainingRatio.toFixed(2) + '%';
 }
+
+// Pēc tam izsaucam updateBudget() funkciju jebkurā vietā, kur tiek atjaunoti ienākumi vai izdevumi
+
