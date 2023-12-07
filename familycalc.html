@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ģimenes budžeta kalkulators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+    <header class="bg-dark text-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://kas.id.lv/wp-content/uploads/2022/12/kasFavicon.png" width="75" height="75"
+                        alt="Logo" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="https://kas.id.lv" class="text-light me-3">Atpakaļ uz kas.id.lv</a>
+                    <a href="https://kas.id.lv/portfolio/portfolio.html" class="text-light me-3">Portfolio</a>
+                    <a href="https://felida.lv/" class="text-light">Felida.lv</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="container mt-5">
+        <h1>Ģimenes budžeta kalkulators</h1>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Ienākumi</h3>
+                <form id="income-form">
+                    <div class="mb-3">
+                        <label for="income-source">Ienākumu avots</label>
+                        <input type="text" class="form-control" id="income-source" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="income-amount">Summa</label>
+                        <input type="number" class="form-control" id="income-amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Pievienot ienākumu</button>
+                </form>
+                <ul id="income-list" class="list-group mt-3">
+                    <!-- Ienākumu saraksts šeit -->
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Izdevumi</h3>
+                <form id="expense-form">
+                    <div class="mb-3">
+                        <label for="expense-source">Izdevumu veids</label>
+                        <input type="text" class="form-control" id="expense-source" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="expense-amount">Summa</label>
+                        <input type="number" class="form-control" id="expense-amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Pievienot izdevumu</button>
+                </form>
+                <ul id="expense-list" class="list-group mt-3">
+                    <!-- Izdevumu saraksts šeit -->
+                </ul>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                <h3>Kopējie rezultāti</h3>
+                <p>Kopējie ienākumi: <span id="total-income">0</span></p>
+                <p>Kopējie izdevumi: <span id="total-expense">0</span></p>
+                <p>Ģimenes budžeta atlikums: <span id="budget-remaining">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- KĀJENE -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-start">
+                        <p class="mb-0 me-3 align-self-center animated-text">Seko man sociālajos tīklos:</p>
+                        <a href="https://www.facebook.com/QvarcY" class="text-light me-3"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@qvarcs" class="text-light me-3"><i
+                                class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/ingars-neija/" class="text-light me-3"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a href="https://www.snapchat.com/add/qvarcy" class="text-light me-3"><i
+                                class="bi bi-snapchat"></i></a>
+                        <a href="https://github.com/QvarcY" class="text-light me-3"><i class="bi bi-github"></i></a>
+                        <a href="https://www.instagram.com/MrLatvian/" class="text-light"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">&copy; 2023 kas.id.lv</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

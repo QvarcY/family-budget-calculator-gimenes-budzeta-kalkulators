@@ -1,0 +1,52 @@
+/* Tava CSS stila pielāgojumi */
+
+body {
+    background-color: #5a5656;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: #db7f0f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+    filter: brightness(90%);
+}
+
+/* Animēts teksts */
+.animated-text {
+    display: inline-block;
+    animation: waveAnimation 2s linear infinite;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
